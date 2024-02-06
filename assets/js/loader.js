@@ -161,7 +161,10 @@ function makeCodeRun(options) {
         var sim = document.getElementById("simframe");
         var fs = document.getElementById("fullscreen");
         if (fs && sim.requestFullscreen) {
-            fs.onclick = function() { sim.requestFullscreen(); }
+            fs.onclick = function() { 
+                sim.requestFullscreen();
+                window.screen.orientation.lock('landscape')
+            }
         } else if (fs) {
             fs.remove();
         }
